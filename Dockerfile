@@ -1,27 +1,19 @@
 # Air Drums Web Application - Dockerfile
 # Multi-stage build for optimized production image
 
-# Stage 1: Base image with system dependencies
+# Stage 1: Base image
 FROM python:3.9-slim as base
 
 # Set working directory
 WORKDIR /app
 
-# Install system dependencies for OpenCV and audio processing
-RUN apt-get update && apt-get install -y \
-    libglib2.0-0 \
-    libsm6 \
-    libxext6 \
-    libxrender-dev \
-    libgomp1 \
-    libglib2.0-0 \
-    && rm -rf /var/lib/apt/lists/*
+# No system dependencies needed for Flask web app
 
 # Stage 2: Dependencies stage
 FROM base as dependencies
 
-# Copy requirements file
-COPY requirements.txt .
+# Copy requirements file (web app only needs Flask)
+COPY requirements-web.txt requirements.txt
 
 # Install Python dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
@@ -36,13 +28,6 @@ COPY templates/ ./templates/
 COPY static/ ./static/
 COPY audio/ ./audio/
 COPY config.json .
-
-# Create a non-root user for security
-RUN useradd -m -u 1000 appuser && \
-    chown -R appuser:appuser /app
-
-# Switch to non-root user
-USER appuser
 
 # Expose Flask port
 EXPOSE 5000
