@@ -1,13 +1,13 @@
 # Air Drums 🥁
 
-🌐 **Live Application**: [https://air-drums-m7jm.vercel.app](https://air-drums-m7jm.vercel.app)
+ **Live Application**: [https://air-drums-m7jm.vercel.app](https://air-drums-m7jm.vercel.app)
 
 A virtual drum kit application that uses computer vision to track colored objects via webcam and plays drum sounds in real-time. **Now available as a web application!**
 
 ## Features
 
-- 🌐 **Web Application**: Live at [air-drums-m7jm.vercel.app](https://air-drums-m7jm.vercel.app) - No installation needed!
-- 🎨 **Custom Color Detection**: Choose any color to track (not just green!)
+- **Web Application**: Live at [air-drums-m7jm.vercel.app](https://air-drums-m7jm.vercel.app) - No installation needed!
+- **Custom Color Detection**: Choose any color to track (not just green!)
 - **Real-time Computer Vision Tracking**: Tracks colored objects via webcam using JavaScript
 - **6 Drum Types**: Kick, Snare, Tom, Floor Tom, Hi-Hat, and Ride cymbal
 - **Volume Sensitivity**: Hit harder for louder sounds (5 volume levels per drum)
@@ -175,6 +175,6 @@ Feel free to use and modify this project for your own purposes!
 4. **Distance** - Stay 2-4 feet from the camera for best tracking
 5. **Practice** - It takes a moment to get used to the virtual drum zones
 
-Enjoy making music! 🎵
+Enjoy making music! 
 
 
