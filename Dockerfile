@@ -1,23 +1,27 @@
 # Air Drums Web Application - Dockerfile
 # Multi-stage build for optimized production image
 
-# Stage 1: Base image
+# Stage 1: Base image with build tools
 FROM python:3.9-slim as base
 
 # Set working directory
 WORKDIR /app
 
-# No system dependencies needed for Flask web app
+# Install build dependencies (gcc needed for simpleaudio compilation)
+RUN apt-get update && apt-get install -y \
+    gcc \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
 # Stage 2: Dependencies stage
 FROM base as dependencies
 
-# Copy requirements file (web app only needs Flask - no simpleaudio needed!)
-COPY requirements-web.txt .
+# Copy requirements file
+COPY requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements-web.txt
+    pip install --no-cache-dir -r requirements.txt
 
 # Stage 3: Production image
 FROM dependencies as production
@@ -69,4 +73,3 @@ ENV PYTHONUNBUFFERED=1
 
 # Run Flask with debug mode
 CMD ["python", "app.py"]
-
