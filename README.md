@@ -1,14 +1,18 @@
 # Air Drums 🥁
 
-A virtual drum kit application that uses computer vision to track colored objects via webcam and plays drum sounds in real-time.
+🌐 **Live Application**: [https://air-drums-m7jm.vercel.app](https://air-drums-m7jm.vercel.app)
+
+A virtual drum kit application that uses computer vision to track colored objects via webcam and plays drum sounds in real-time. **Now available as a web application!**
 
 ## Features
 
-- **Real-time Computer Vision Tracking**: Tracks green objects (drum sticks, markers, etc.) using OpenCV
+- 🌐 **Web Application**: Live at [air-drums-m7jm.vercel.app](https://air-drums-m7jm.vercel.app) - No installation needed!
+- 🎨 **Custom Color Detection**: Choose any color to track (not just green!)
+- **Real-time Computer Vision Tracking**: Tracks colored objects via webcam using JavaScript
 - **6 Drum Types**: Kick, Snare, Tom, Floor Tom, Hi-Hat, and Ride cymbal
 - **Volume Sensitivity**: Hit harder for louder sounds (5 volume levels per drum)
 - **Multi-Stick Support**: Use up to 2 sticks simultaneously
-- **Interactive Landing Page**: User-friendly instructions on startup
+- **Interactive Landing Page**: Professional, user-friendly interface
 - **Configurable Settings**: Adjust colors, zones, and sensitivity via config file
 
 ## Requirements
@@ -32,10 +36,36 @@ A virtual drum kit application that uses computer vision to track colored object
 
 4. **Install dependencies**:
    ```bash
+   # For web application (Flask only)
    pip install -r requirements.txt
+   
+   # For desktop application (full dependencies)
+   pip install -r requirements-full.txt
    ```
 
-## Usage
+## Quick Start (Web Application)
+
+1. **Visit the live site**: [https://air-drums-m7jm.vercel.app](https://air-drums-m7jm.vercel.app)
+
+2. **Click "Start Playing"** on the landing page
+
+3. **Allow camera access** when prompted
+
+4. **Select a color** from the color picker (green, blue, red, yellow, purple, orange, or custom)
+
+5. **Hold a colored object** in your hand(s) matching the selected color
+
+6. **Move your hands up and down** to "hit" the virtual drums
+
+7. **Hit different zones**:
+   - **Top Row (Left to Right)**: Kick, Snare, Tom
+   - **Bottom Row (Left to Right)**: Floor, Hi-Hat, Ride
+
+8. **Enjoy making music!** 🎵
+
+## Desktop Application Usage
+
+For the desktop version (requires Python):
 
 1. **Run the application**:
    ```bash
@@ -44,15 +74,11 @@ A virtual drum kit application that uses computer vision to track colored object
 
 2. **Read the instructions** on the landing page, then press any key to start
 
-3. **Hold a GREEN object** in each hand (green markers work great!)
+3. **Hold a colored object** in each hand
 
 4. **Move your hands up and down** to "hit" the virtual drums
 
-5. **Hit different zones**:
-   - **Top Row (Left to Right)**: Kick, Snare, Tom
-   - **Bottom Row (Left to Right)**: Floor, Hi-Hat, Ride
-
-6. **Press 'Q'** to quit
+5. **Press 'Q'** to quit
 
 ## How It Works
 
@@ -83,11 +109,12 @@ You can customize the application by editing `config.json`:
 - Ensure no other application is using your webcam
 - Try changing `camera_index` in `config.json` (try 0, 1, or 2)
 
-### Green objects not detected
+### Colored objects not detected
 - Ensure good lighting
-- Try adjusting HSV color values in `config.json`
-- Use a bright, solid green color
-- Check that the green object is clearly visible in the camera view
+- Use a bright, solid color (avoid transparent materials)
+- Try selecting a different color from the color picker
+- Check that the colored object is clearly visible in the camera view
+- For web app: Use the color picker to match your object's color
 
 ### No sound playing
 - Check that audio files exist in the `audio/` folder
@@ -118,6 +145,15 @@ AIR_DRUMS/
 
 ## Technical Details
 
+### Web Application
+- **Frontend**: HTML5, CSS3, JavaScript with Canvas API
+- **Backend**: Flask (Python) for serving static files and API endpoints
+- **Computer Vision**: Client-side JavaScript for color detection and tracking
+- **Audio**: Web Audio API for low-latency sound playback
+- **Deployment**: Vercel (serverless functions)
+- **Live URL**: [air-drums-m7jm.vercel.app](https://air-drums-m7jm.vercel.app)
+
+### Desktop Application
 - **Computer Vision**: OpenCV for color detection and contour tracking
 - **Audio**: SimpleAudio for low-latency WAV file playback
 - **Motion Detection**: Tracks position history to detect downward strikes
