@@ -52,3 +52,4 @@ test: ## Run basic connectivity test
 	@sleep 3
 	@curl -f http://localhost:5000/ > /dev/null 2>&1 && echo "✓ Application is running!" || echo "✗ Application is not responding"
 
+

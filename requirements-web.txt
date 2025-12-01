@@ -1,4 +1,5 @@
 # Requirements for Air Drums Web Application only
 # The web app uses Web Audio API in JavaScript, not Python audio libraries
 flask>=2.0.0
+gunicorn>=20.0.0
 

@@ -1,6 +1,4 @@
-opencv-contrib-python>=4.8.0
-numpy>=1.21.0
-imutils>=0.5.4
-simpleaudio>=1.0.4
+# Requirements for Air Drums Web Application (Vercel/Cloud Run)
+# The web app uses Web Audio API in JavaScript, not Python audio libraries
 flask>=2.0.0
-
+gunicorn>=20.0.0
