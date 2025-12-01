@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Drums - Play</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/play.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">Air Drums</a>
+            <a href="/" class="nav-link">Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <h1>Ready to play?</h1>
+                <p>Select your color, start the camera, and make music</p>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="video-section">
+                <div class="video-container">
+                    <div id="loadingMessage" class="loading-message">
+                        <p>Click "Start Camera" to begin</p>
+                    </div>
+                    <canvas id="videoCanvas"></canvas>
+                    <video id="videoInput" autoplay playsinline style="display: none;"></video>
+                    <div class="drum-zones-overlay" id="zonesOverlay"></div>
+                </div>
+                
+                <div class="video-controls">
+                    <button id="startBtn" class="btn btn-primary">Start Camera</button>
+                    <div id="status" class="status-indicator">Waiting to start...</div>
+                </div>
+            </div>
+
+            <div class="controls-panel">
+                <div class="control-card">
+                    <h3>Color Selection</h3>
+                    <p class="card-description">Choose which color to track for your drum sticks</p>
+                    
+                    <div class="color-picker-section">
+                        <div class="preset-colors">
+                            <button class="color-preset" data-color="green" style="background: #00ff00;"></button>
+                            <button class="color-preset" data-color="blue" style="background: #0000ff;"></button>
+                            <button class="color-preset" data-color="red" style="background: #ff0000;"></button>
+                            <button class="color-preset" data-color="yellow" style="background: #ffff00;"></button>
+                            <button class="color-preset" data-color="purple" style="background: #8000ff;"></button>
+                            <button class="color-preset" data-color="orange" style="background: #ff8800;"></button>
+                        </div>
+                        
+                        <div class="custom-color-input">
+                            <label>Or pick a custom color:</label>
+                            <input type="color" id="customColorPicker" value="#00ff00">
+                            <button id="useCustomColor" class="btn btn-secondary small">Use This Color</button>
+                        </div>
+                        
+                        <div class="current-color-indicator">
+                            <span>Currently tracking:</span>
+                            <div class="color-display" id="currentColorDisplay" style="background: #00ff00;"></div>
+                            <span id="currentColorName">Green</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-card">
+                    <h3>Instructions</h3>
+                    <ul class="instructions-list">
+                        <li>Hold your colored object in your hand(s)</li>
+                        <li>Move up and down to hit the virtual drums</li>
+                        <li>6 zones: Kick, Snare, Tom, Floor, Hi-Hat, Ride</li>
+                        <li>Hit harder for louder sounds!</li>
+                    </ul>
+                </div>
+
+                <div class="control-card">
+                    <h3>Tips</h3>
+                    <ul class="instructions-list">
+                        <li>Use a bright, solid color (avoid transparent)</li>
+                        <li>Good lighting works best</li>
+                        <li>Stay 2-4 feet from your webcam</li>
+                        <li>Avoid matching backgrounds</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/play.js') }}"></script>
+</body>
+</html>

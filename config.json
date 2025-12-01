@@ -1,0 +1,31 @@
+{
+  "color_detection": {
+    "lower_bound": [30, 86, 14],
+    "upper_bound": [97, 244, 255],
+    "description": "HSV color range for green object detection"
+  },
+  "camera": {
+    "width": 800,
+    "height": 600,
+    "camera_index": 0
+  },
+  "drum_layout": {
+    "zones": [
+      {"name": "kick", "x1": 0, "y1": 0, "x2": 266, "y2": 300, "color": [0, 255, 0]},
+      {"name": "snare", "x1": 266, "y1": 0, "x2": 533, "y2": 300, "color": [255, 0, 0]},
+      {"name": "tom", "x1": 533, "y1": 0, "x2": 800, "y2": 300, "color": [0, 0, 255]},
+      {"name": "floor", "x1": 0, "y1": 300, "x2": 266, "y2": 600, "color": [255, 255, 0]},
+      {"name": "hat", "x1": 266, "y1": 300, "x2": 533, "y2": 600, "color": [255, 0, 255]},
+      {"name": "ride", "x1": 533, "y1": 300, "x2": 800, "y2": 600, "color": [0, 255, 255]}
+    ]
+  },
+  "motion_detection": {
+    "min_movement": 20,
+    "min_radius": 4,
+    "volume_sensitivity": 100
+  },
+  "audio": {
+    "base_path": "audio"
+  }
+}
+

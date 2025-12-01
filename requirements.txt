@@ -1,0 +1,6 @@
+opencv-contrib-python>=4.8.0
+numpy>=1.21.0
+imutils>=0.5.4
+simpleaudio>=1.0.4
+flask>=2.0.0
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Drums - Virtual Drum Kit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Air Drums</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#features">Features</a>
+                <a href="/play" class="nav-cta">Play Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Ready to play drums without the drums?</h1>
+            <p class="hero-subtitle">Virtual drum kit that tracks your movements. Just grab a colored object and start playing.</p>
+            <a href="/play" class="cta-button">Start Playing</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Air Drums</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    Air Drums is an innovative virtual drum kit application that brings the joy of drumming to anyone with a webcam. 
+                    Using advanced computer vision technology, it tracks colored objects in real-time and transforms your movements into 
+                    authentic drum sounds.
+                </p>
+                <p class="about-text">
+                    Whether you're a beginner wanting to experiment with rhythm or an experienced musician looking for a unique way to 
+                    practice, Air Drums provides an intuitive and fun experience. No physical drums needed - just grab any colored object 
+                    and start playing!
+                </p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Drum Types</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Volume Levels</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Color Options</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Choose Your Color</h3>
+                    <p>Select any color you want to track from the color picker. Green, blue, red, yellow, purple, orange - or pick a custom color!</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Hold the Object</h3>
+                    <p>Hold your colored object in one or both hands in front of your webcam.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Move & Play</h3>
+                    <p>Move your hands up and down to hit the virtual drums. Hit harder for louder sounds!</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <h3>6 Drum Zones</h3>
+                    <p>The screen is divided into 6 zones: Kick, Snare, Tom, Floor, Hi-Hat, and Ride.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section features-section">
+        <div class="container">
+            <h2 class="section-title">Everything you need</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Custom Color Detection</h3>
+                    <p>Choose any color to track. No need for specific objects - use what you have.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🥁</div>
+                    <h3>6 Drum Types</h3>
+                    <p>Kick, Snare, Tom, Floor, Hi-Hat, and Ride - a complete drum kit.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔊</div>
+                    <h3>Volume Control</h3>
+                    <p>Hit harder for louder sounds. Five volume levels for dynamic playing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Real-Time Tracking</h3>
+                    <p>Instant response with smooth tracking. No lag, just pure rhythm.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Dual Stick Support</h3>
+                    <p>Use one or two colored objects simultaneously for complex rhythms.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Works Anywhere</h3>
+                    <p>Runs in your browser. No downloads, no installation required.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to make music?</h2>
+                <p>Start playing your virtual drums in seconds.</p>
+                <a href="/play" class="cta-button large">Start Playing Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">Air Drums</div>
+                    <p>A virtual drum kit powered by computer vision</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <a href="#about">About</a>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#features">Features</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="/play">Play</a>
+                        <a href="#">Help</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Air Drums. Built with passion for music.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
