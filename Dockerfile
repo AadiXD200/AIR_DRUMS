@@ -12,12 +12,12 @@ WORKDIR /app
 # Stage 2: Dependencies stage
 FROM base as dependencies
 
-# Copy requirements file (web app only needs Flask)
-COPY requirements-web.txt requirements.txt
+# Copy requirements file (web app only needs Flask - no simpleaudio needed!)
+COPY requirements-web.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+    pip install --no-cache-dir -r requirements-web.txt
 
 # Stage 3: Production image
 FROM dependencies as production
