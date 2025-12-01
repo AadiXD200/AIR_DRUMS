@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  air-drums:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: air-drums-app
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=production
+      - PYTHONUNBUFFERED=1
+    volumes:
+      # Optional: Mount audio directory for easy updates
+      - ./audio:/app/audio:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - air-drums-network
+
+networks:
+  air-drums-network:
+    driver: bridge
+

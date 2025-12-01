@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  air-drums:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: air-drums-dev
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+      - PYTHONUNBUFFERED=1
+      - FLASK_DEBUG=1
+    volumes:
+      # Mount source code for hot reload
+      - ./app.py:/app/app.py
+      - ./templates:/app/templates
+      - ./static:/app/static
+      - ./audio:/app/audio
+      - ./config.json:/app/config.json
+    restart: unless-stopped
+    networks:
+      - air-drums-network
+
+networks:
+      air-drums-network:
+        driver: bridge
+

@@ -76,11 +76,15 @@ def audio_list():
 
 
 if __name__ == '__main__':
+    import os
+    debug_mode = os.environ.get('FLASK_ENV') == 'development'
+    
     print("="*60)
     print("Air Drums Web Application")
     print("="*60)
-    print(f"Starting server at http://localhost:5000")
+    print(f"Starting server at http://0.0.0.0:5000")
     print(f"Audio directory: {AUDIO_DIR}")
+    print(f"Debug mode: {debug_mode}")
     print("="*60)
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=debug_mode, host='0.0.0.0', port=5000)
 
